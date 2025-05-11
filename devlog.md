@@ -26,3 +26,10 @@ For the next few sessions I plan to do the following:
 - Begin defining the movement, so that the program can start navigating the maze.
 - Implement a path finding algorithm such as dfs to find a path to the end location.
 - Verify that the program has reached the end location, then print out the nessecary information as to how it got there.
+
+# April 11th, 2025 5:19PM - Session Start
+This session I plan to implement the following tasks:
+
+- Defining the steps needed to navigate
+- Apply the navigation to different sections of the maze
+- Make sure that the navigation is valid 
