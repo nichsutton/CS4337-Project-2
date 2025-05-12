@@ -44,3 +44,8 @@ I also needed to validate a list of actions to make sure no actions runs into a 
 
 # April 11th, 2025 6:58PM - Session End
 I have accomplished all of the goal that I had defined at the start. The next steps should be relatively simply. All I need to do it check if the cell is the end goal, and apply a dfs search to find a valid path. this can use the previous predicates I have defined to make the job easier.
+
+# April 11th, 2025 7:59PM - Session Start
+This session I plan the finish the remainder of the project. these tasks include implementing a navigation algorithm to actually navigate the maze based on the previously defined predicates.
+
+I also plan to implement checks and predicates to successfully identify the exit cells.
