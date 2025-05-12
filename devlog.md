@@ -49,3 +49,16 @@ I have accomplished all of the goal that I had defined at the start. The next st
 This session I plan the finish the remainder of the project. these tasks include implementing a navigation algorithm to actually navigate the maze based on the previously defined predicates.
 
 I also plan to implement checks and predicates to successfully identify the exit cells.
+
+First, I need to validate a path when a list of actions is already provided to the find_exit predicate. It will work by getting the starting coordinates, then validating the actions needed to get there, then it checks if the ending cell is the end or goal cell.
+
+Second, I need to create an algorithm to find the actual path to the end cell without a provided list on actions.
+
+- This predicate is called find_exit and is the predicate for the project
+
+the find exit predicate works with both a list of actions or undefined actions.
+
+in the case the actions are undefined, we created a helper predicate called navigate_maze, when finds a valid path to reach the exit cell. this predicate is recursively called until we reach this cell.
+
+# April 11th, 2025 10:22PM - Session End
+This session, I have completely all the tasks I set out to do. I have defined an algorithm that can find a path to a exit cell whilst making sure the movements are valid with the use of helper predicates. we have also defined predicates to identify exit cells and applying the steps to reach them.

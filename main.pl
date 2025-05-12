@@ -30,7 +30,35 @@ check_valid_moves(_, Pos, [], Pos).
 % makes sure that a provided list of actions is valid, and that we are not running into any walls or invalid cells
 check_valid_moves(Maze, Pos, [Action|Rest], FinalPos) :-
     move_coordinate(Pos, Action, NextPos),
-    valid_coordinates(Maze, NextPos),
+    validate_coordinates(Maze, NextPos),
     get_cell_information(Maze, NextPos, Cell),
     Cell \= w,
     check_valid_moves(Maze, NextPos, Rest, FinalPos).
+
+% this predicate verifies that the provided list of actions is valid and is able to reach the end of the maze
+find_exit(Maze, Actions) :-
+    nonvar(Actions),
+    get_starting_coordinates(Maze, Start),
+    check_valid_moves(Maze, Start, Actions, End),
+    get_cell_information(Maze, End, e).
+
+% same as above but without an input list of actions
+find_exit(Maze, Actions) :-
+    var(Actions),
+    get_starting_coordinates(Maze, Start),
+    navigate_maze(Maze, Start, [], Actions).
+
+% stops the recursion if current cell is exit
+navigate_maze(Maze, Pos, Visited, []) :-
+    get_cell_information(Maze, Pos, e).
+
+% explores the next position based on the actions whilst making sure it is still valid and not a wall
+% adds to visited, then recursivly goes to the next position
+navigate_maze(Maze, Pos, Visited, [Action|Actions]) :-
+    move_coordinate(Pos, Action, NextPos),
+    validate_coordinates(Maze, NextPos),
+    get_cell_information(Maze, NextPos, Cell),
+    Cell \= w,
+    \+ member(NextPos, Visited),
+    navigate_maze(Maze, NextPos, [Pos|Visited], Actions).
+
