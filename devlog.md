@@ -33,3 +33,14 @@ This session I plan to implement the following tasks:
 - Defining the steps needed to navigate
 - Apply the navigation to different sections of the maze
 - Make sure that the navigation is valid 
+
+I needed to add a list of actions that can represent the possible movements we can take via a coordinate system.
+
+- these are the predicates called "move_coordinates"
+
+I also needed to validate a list of actions to make sure no actions runs into a wall or enters an invalid cell.
+
+- this predicate is called "check_valid_moves"
+
+# April 11th, 2025 6:58PM - Session End
+I have accomplished all of the goal that I had defined at the start. The next steps should be relatively simply. All I need to do it check if the cell is the end goal, and apply a dfs search to find a valid path. this can use the previous predicates I have defined to make the job easier.
